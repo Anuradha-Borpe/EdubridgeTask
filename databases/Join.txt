@@ -1,0 +1,66 @@
+create database sample4;
+use sample4;
+
+/*for single primary keys*/
+CREATE TABLE samp (
+    ID int(5),
+    FirstName varchar(255)
+
+    );
+
+
+CREATE TABLE samp1 (
+    ID int(5),
+    Email varchar(255)
+);
+drop table samp1;
+
+insert into samp values
+(101,'Nita'),
+(102,'Mita'),
+(103,'Rita');
+
+select * from samp;
+
+
+
+
+insert into samp1 values
+(101,'nita@gmail.com'),
+(102,'Mita@gmail.com'),
+(103,'Rita@gmail.com');
+select * from samp1;
+
+
+desc samp;
+desc samp1;
+
+
+select * from      #cross join
+samp cross join samp1;
+
+select * from          #inner join select samp.ID,samp1.email from   
+samp inner join samp1
+where samp.ID=samp1.ID;
+
+SELECT * FROM    #equi jo
+samp,samp1
+WHERE samp.ID =
+samp1.ID; 
+
+select * from      #Natural join
+samp natural join samp1;   
+
+select samp.ID,samp1.email from        #Left outer join
+samp left outer join samp1
+on samp.ID=samp1.ID;
+
+
+select samp.ID,samp1.email from        #right outer join
+samp right outer join samp1
+on samp.ID=samp1.ID
+
+
+select samp.ID,samp1.email from        #full outer join
+samp full outer join samp1
+on samp.ID=samp1.ID;
